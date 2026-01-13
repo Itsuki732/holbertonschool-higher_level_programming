@@ -1,8 +1,9 @@
-#!/usr/bin/python3
 def pow(a, b):
-    if b < 0:
-        return 0
     result = 1
+    if b < 0:
+        for _ in range(-b):
+            result *= a
+        return 1 / result
     for _ in range(b):
         result *= a
     return result
