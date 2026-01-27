@@ -60,3 +60,10 @@ class Rectangle:
 
         for _ in range(self.__height):
             print("#" * self.__width)
+
+    def __str__(self):
+        """Return the rectangle as a string of #."""
+        if self.__width == 0 or self.__height == 0:
+            return ""
+
+        return "\n".join("#" * self.__width for _ in range(self.__height))
