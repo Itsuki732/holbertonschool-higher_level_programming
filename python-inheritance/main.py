@@ -7,16 +7,26 @@ bg.integer_validator("my_int", 12)
 bg.integer_validator("width", 89)
 
 try:
-    bg.integer_validator("name", "John")
+    bg.integer_validator("age", (4,))
 except Exception as e:
     print("[{}] {}".format(e.__class__.__name__, e))
 
 try:
-    bg.integer_validator("age", 0)
+    bg.integer_validator("age", [3])
 except Exception as e:
     print("[{}] {}".format(e.__class__.__name__, e))
 
 try:
-    bg.integer_validator()
+    bg.integer_validator("age", True)
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
+
+try:
+    bg.integer_validator("age", {3, 4})
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
+
+try:
+    bg.integer_validator("age", None)
 except Exception as e:
     print("[{}] {}".format(e.__class__.__name__, e))
