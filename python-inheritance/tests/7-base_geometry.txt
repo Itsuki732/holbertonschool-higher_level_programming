@@ -1,19 +1,22 @@
-Help on class BaseGeometry in module 7-base_geometry:
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
 
-class BaseGeometry(builtins.object)
- |  Class BaseGeometry
- |  
- |  Methods defined here:
- |  
- |  area(self)
- |  
- |  integer_validator(self, name, value)
- |  
- |  ----------------------------------------------------------------------
- |  Data descriptors defined here:
- |  
- |  __dict__
- |      dictionary for instance variables (if defined)
- |  
- |  __weakref__
- |      list of weak references to the object (if defined)
+>>> bg.integer_validator("width", 10)
+
+>>> bg.integer_validator("height", 1)
+
+>>> bg.integer_validator("name", "John")
+Traceback (most recent call last):
+TypeError: name must be an integer
+
+>>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+ValueError: age must be greater than 0
+
+>>> bg.integer_validator("distance", -5)
+Traceback (most recent call last):
+ValueError: distance must be greater than 0
+
+>>> bg.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
