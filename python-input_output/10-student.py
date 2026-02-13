@@ -29,7 +29,12 @@ class Student:
         Returns:
             dict: A dictionary containing the student's attributes.
         """
-        if isinstance(attrs, list) and all(isinstance(attrs, str) for attrs in attrs):
-            return {key: value for key, value in self.__dict__.items() if key in attrs}
+        if isinstance(attrs, list) and all(
+                isinstance(attr, str) for attr in attrs):
+            return {
+                key: value
+                for key, value in self.__dict__.items()
+                if key in attrs
+            }
 
         return self.__dict__
